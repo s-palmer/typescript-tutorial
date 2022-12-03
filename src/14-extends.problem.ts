@@ -24,6 +24,19 @@ interface Comment extends Base {
   comment: string;
 }
 
+interface Feed extends Base, User {
+  posts: Array<object>
+}
+
+const feed: Feed = {
+  id: "feed id",
+  firstName: "John",
+  lastName: "Wick",
+  posts: [
+    {}
+  ]
+}
+
 // note interfaces can extend from other interfaces, types cannot
 
 type tests = [
