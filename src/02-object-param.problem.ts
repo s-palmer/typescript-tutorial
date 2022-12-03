@@ -1,5 +1,4 @@
 import { expect, it } from "vitest";
-import { number } from "zod";
 
 type paramsType = {
   first: number;
