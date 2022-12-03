@@ -1,7 +1,21 @@
 import { expect, it } from "vitest";
+import { string } from "zod";
 
 const createCache = () => {
-  const cache = {};
+  const cache: Record<string, string> = {};
+
+  // solution 2 - index signature inside a type
+  // const cache: {
+  //   [id: string]: string;
+  // } = {}
+
+  // solution 3
+  // interface Cache {
+  //   [id: string]: string
+  // }
+
+  // const cache: Cache = {}
+
 
   const add = (id: string, value: string) => {
     cache[id] = value;
