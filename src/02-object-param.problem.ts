@@ -10,7 +10,7 @@ interface ParamsTypeInterface {
   second: number
 }
 
-export const addTwoNumbers = (params: ParamsTypeInterface) => {
+export const addTwoNumbers = (params: ParamsType) => {
   return params.first + params.second;
 };
 
