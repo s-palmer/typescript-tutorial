@@ -15,12 +15,14 @@ interface Post {
  * User AND { posts: Post[] }
  */
 
-interface Posts { posts: Post[] }
+type DefaultUserAndPosts = User & { posts: Post[] }
+
+// interface Posts { posts: Post[] }
 
 // or just
 // export const getDefaultUserAndPosts = (): User & { posts: Post[] }
 
-export const getDefaultUserAndPosts = (): User & Posts => {
+export const getDefaultUserAndPosts = (): DefaultUserAndPosts => {
   return {
     id: "1",
     firstName: "Matt",
