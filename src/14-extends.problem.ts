@@ -6,22 +6,25 @@ import { Equal, Expect } from "./helpers/type-utils";
  * make it more DRY?
  */
 
-interface User {
+interface Base {
   id: string;
+}
+
+interface User extends Base {
   firstName: string;
   lastName: string;
 }
 
-interface Post {
-  id: string;
+interface Post extends Base {
   title: string;
   body: string;
 }
 
-interface Comment {
-  id: string;
+interface Comment extends Base {
   comment: string;
 }
+
+// note interfaces can extend from other interfaces, types cannot
 
 type tests = [
   Expect<Equal<User, { id: string; firstName: string; lastName: string }>>,
